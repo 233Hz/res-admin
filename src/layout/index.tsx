@@ -47,9 +47,6 @@ const Layout = () => {
                 colorBgMenuItemSelected: 'rgba(0,0,0,0.04)'
               }
             }}
-            menu={{
-              collapsedShowGroupTitle: true
-            }}
             avatarProps={{
               src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
               size: 'small',

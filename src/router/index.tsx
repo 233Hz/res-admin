@@ -1,5 +1,5 @@
 import Login from '../pages/Login'
-import Layout from '../pages/Layout'
+import Layout from '../layout'
 import Dashboard from '../pages/Dashboard'
 import Dept from '../pages/Admin/Dept'
 import Role from '../pages/Admin/Role'
