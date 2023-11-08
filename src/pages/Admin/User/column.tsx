@@ -58,7 +58,7 @@ const columns: ProColumns<UserItem>[] = [
     valueType: 'select',
     request: async () => {
       const { data } = await pageDept()
-      return data.data.list.map(item => {
+      return data.data.list.map((item) => {
         return {
           label: item.deptName,
           value: item.id
@@ -74,7 +74,7 @@ const columns: ProColumns<UserItem>[] = [
     valueType: 'select',
     request: async () => {
       const { data } = await pageRole()
-      return data.data.list.map(item => {
+      return data.data.list.map((item) => {
         return {
           label: item.roleName,
           value: item.id
@@ -90,11 +90,11 @@ const columns: ProColumns<UserItem>[] = [
     sorter: true,
     render: (_, record) => {
       if (record.validPeriod === 1) {
-        return <Tag color='#87d068'>永久</Tag>
+        return <Tag color="#87d068">永久</Tag>
       } else if (record.validPeriod === 0) {
-        return <Tag color='#cd201f'>禁用</Tag>
+        return <Tag color="#cd201f">禁用</Tag>
       } else {
-        return <Tag color='#f50'>{record.validPeriod}</Tag>
+        return <Tag color="#f50">{record.validPeriod}</Tag>
       }
     }
   },
@@ -113,10 +113,10 @@ const columns: ProColumns<UserItem>[] = [
     width: 1,
     render: (text, record, _, action) => {
       return [
-        <CustomModalForm type='update' key='editable' form={record} />,
+        <CustomModalForm type="update" key="editable" form={record} />,
         <Button
-          type='link'
-          key='deletable'
+          type="link"
+          key="deletable"
           icon={<DeleteOutlined />}
           onClick={() => console.log(text, record, _, action)}
           danger

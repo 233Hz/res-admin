@@ -52,7 +52,7 @@ const LineChart: React.FC = () => {
   }
 
   return (
-    <Card title='用户访问浏览器分布'>
+    <Card title="用户访问浏览器分布">
       <Pie {...config} style={{ height: 300 }} />
     </Card>
   )

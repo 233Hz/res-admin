@@ -24,23 +24,23 @@ export interface Props {
 const triggerType = (type: CustomModalType) => {
   if (type === 'add') {
     return (
-      <Button type='primary' icon={<PlusOutlined />}>
+      <Button type="primary" icon={<PlusOutlined />}>
         添加
       </Button>
     )
   } else if (type === 'update') {
     return (
-      <Button type='link' icon={<EditOutlined />}>
+      <Button type="link" icon={<EditOutlined />}>
         编辑
       </Button>
     )
   }
 }
 
-const CustomModalForm: React.FC<Props> = props => (
+const CustomModalForm: React.FC<Props> = (props) => (
   <ModalForm<UserItem>
     trigger={triggerType(props.type)}
-    onFinish={async values => {
+    onFinish={async (values) => {
       console.log(values)
       message.success('提交成功')
     }}
@@ -48,20 +48,20 @@ const CustomModalForm: React.FC<Props> = props => (
   >
     <ProForm.Group>
       <ProFormText
-        width='md'
-        name='loginName'
-        label='登录账号'
-        placeholder='请输入登录账号'
+        width="md"
+        name="loginName"
+        label="登录账号"
+        placeholder="请输入登录账号"
         rules={[{ required: true }]}
       />
       <ProFormSelect
-        width='md'
-        name='deptId'
-        label='所在部门'
-        placeholder='请选择所在部门'
+        width="md"
+        name="deptId"
+        label="所在部门"
+        placeholder="请选择所在部门"
         request={async () => {
           const { data } = await pageDept()
-          return data.data.list.map(item => {
+          return data.data.list.map((item) => {
             return {
               label: item.deptName,
               value: item.id
@@ -71,15 +71,15 @@ const CustomModalForm: React.FC<Props> = props => (
         rules={[{ required: true }]}
       />
       <ProFormText
-        width='md'
-        name='username'
-        label='用户姓名'
-        placeholder='请输入用户姓名'
+        width="md"
+        name="username"
+        label="用户姓名"
+        placeholder="请输入用户姓名"
         rules={[{ required: true }]}
       />
       <ProFormRadio.Group
-        name='gender'
-        label='性别'
+        name="gender"
+        label="性别"
         options={[
           {
             label: '男',
@@ -93,27 +93,27 @@ const CustomModalForm: React.FC<Props> = props => (
         rules={[{ required: true }]}
       />
       <ProFormText
-        width='md'
-        name='phone'
-        label='手机号码'
-        placeholder='请输入手机号码'
+        width="md"
+        name="phone"
+        label="手机号码"
+        placeholder="请输入手机号码"
         rules={[{ required: true }]}
       />
       <ProFormText
-        width='md'
-        name='email'
-        label='电子邮箱'
-        placeholder='请输入电子邮箱'
+        width="md"
+        name="email"
+        label="电子邮箱"
+        placeholder="请输入电子邮箱"
         rules={[{ required: true }, { type: 'email' }]}
       />
       <ProFormSelect
-        width='md'
-        name='roleId'
-        label='用户角色'
-        placeholder='请选择用户角色'
+        width="md"
+        name="roleId"
+        label="用户角色"
+        placeholder="请选择用户角色"
         request={async () => {
           const { data } = await pageRole()
-          return data.data.list.map(item => {
+          return data.data.list.map((item) => {
             return {
               label: item.roleName,
               value: item.id
@@ -126,17 +126,26 @@ const CustomModalForm: React.FC<Props> = props => (
         {({ roleId }) => {
           return roleId ? (
             <ProFormDatePicker
-              width='md'
-              name='validPeriod'
-              label='有效期至'
-              placeholder='不填永久有效'
+              width="md"
+              name="validPeriod"
+              label="有效期至"
+              placeholder="不填永久有效"
             />
           ) : null
         }}
       </ProFormDependency>
-      <ProFormText width='md' name='idCard' label='身份证' placeholder='请输入身份证' />
+      <ProFormText
+        width="md"
+        name="idCard"
+        label="身份证"
+        placeholder="请输入身份证"
+      />
     </ProForm.Group>
-    <ProFormTextArea name='address' label='联系地址' placeholder='请输入联系地址' />
+    <ProFormTextArea
+      name="address"
+      label="联系地址"
+      placeholder="请输入联系地址"
+    />
   </ModalForm>
 )
 

@@ -52,33 +52,40 @@ const treeData: DataNode[] = [
   }
 ]
 
-const CustomTreeModal = forwardRef<CustomTreeModalRef, CustomTreeModalProps>((_props, ref) => {
-  useImperativeHandle(ref, () => ({
-    showModal
-  }))
+const CustomTreeModal = forwardRef<CustomTreeModalRef, CustomTreeModalProps>(
+  (_props, ref) => {
+    useImperativeHandle(ref, () => ({
+      showModal
+    }))
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const showModal = () => {
-    setIsModalOpen(true)
-  }
-  const handleOk = () => {
-    setIsModalOpen(false)
-  }
-  const handleCancel = () => {
-    setIsModalOpen(false)
-  }
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const showModal = () => {
+      setIsModalOpen(true)
+    }
+    const handleOk = () => {
+      setIsModalOpen(false)
+    }
+    const handleCancel = () => {
+      setIsModalOpen(false)
+    }
 
-  return (
-    <Modal title='分配权限' open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-      <Tree
-        checkable
-        showLine={{ showLeafIcon: true }}
-        defaultExpandedKeys={['0-0-0']}
-        treeData={treeData}
-      />
-    </Modal>
-  )
-})
+    return (
+      <Modal
+        title="分配权限"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <Tree
+          checkable
+          showLine={{ showLeafIcon: true }}
+          defaultExpandedKeys={['0-0-0']}
+          treeData={treeData}
+        />
+      </Modal>
+    )
+  }
+)
 
 CustomTreeModal.displayName = 'CustomTransferModal'
 

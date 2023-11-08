@@ -7,4 +7,6 @@ enum API {
 }
 
 export const queryCategoryLevel = (id?: number) =>
-  request.get<ResponseResult<CategoryItem[]>>(API.QUERY_CATEGORY_LEVEL, { params: { id } })
+  request.get<ResponseResult<CategoryItem[]>>(API.QUERY_CATEGORY_LEVEL, {
+    params: { id }
+  })

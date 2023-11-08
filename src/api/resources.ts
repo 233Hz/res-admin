@@ -6,4 +6,5 @@ enum API {
   PAGE = '/resources/page'
 }
 
-export const resourcesPage = () => request.get<ResponseResult<PageResult<ResourcesItem>>>(API.PAGE)
+export const resourcesPage = () =>
+  request.get<ResponseResult<PageResult<ResourcesItem>>>(API.PAGE)

@@ -30,7 +30,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/',
-    element: <Navigate to='/index' />
+    element: <Navigate to="/index" />
   },
   {
     path: '/',
@@ -44,7 +44,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/admin',
-    element: <Navigate to='/admin/dept' />
+    element: <Navigate to="/admin/dept" />
   },
   {
     path: '/admin',
@@ -80,7 +80,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/resources',
-    element: <Navigate to='/resources/list' />
+    element: <Navigate to="/resources/list" />
   },
   {
     path: '/resources',
@@ -102,7 +102,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/audit',
-    element: <Navigate to='/audit/index' />
+    element: <Navigate to="/audit/index" />
   },
   {
     path: '/audit',
@@ -120,7 +120,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/statistics',
-    element: <Navigate to='/statistics/content' />
+    element: <Navigate to="/statistics/content" />
   },
   {
     path: '/statistics',
@@ -146,7 +146,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/setting',
-    element: <Navigate to='/setting/website' />
+    element: <Navigate to="/setting/website" />
   },
   {
     path: '/setting',

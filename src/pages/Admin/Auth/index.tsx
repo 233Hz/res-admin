@@ -47,7 +47,7 @@ const Auth: React.FC = () => {
             data: data.data.list
           }
         }}
-        rowKey='id'
+        rowKey="id"
         search={{
           labelWidth: 'auto'
         }}
@@ -55,7 +55,7 @@ const Auth: React.FC = () => {
           pageSize: 10,
           onChange: (page, pageSize) => console.log(page, pageSize)
         }}
-        dateFormatter='string'
+        dateFormatter="string"
       />
       <CustomTreeModal ref={transferModalRef} />
     </>

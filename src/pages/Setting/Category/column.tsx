@@ -45,8 +45,8 @@ const columns: ProColumns<CategoryItem>[] = [
     render: (text, record, _, action) => {
       console.log(text, record, _, action)
       return [
-        <CustomModalForm key='editable' type='update' form={record} />,
-        <Button type='link' key='deletable' icon={<DeleteOutlined />} danger>
+        <CustomModalForm key="editable" type="update" form={record} />,
+        <Button type="link" key="deletable" icon={<DeleteOutlined />} danger>
           删除
         </Button>
       ]

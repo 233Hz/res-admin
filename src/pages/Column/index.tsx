@@ -46,7 +46,7 @@ const ColumnList: React.FC = () => {
                 data: data.data.list
               }
             }}
-            rowKey='id'
+            rowKey="id"
             search={{
               labelWidth: 'auto'
             }}
@@ -54,10 +54,10 @@ const ColumnList: React.FC = () => {
               pageSize: 10,
               onChange: (page, pageSize) => console.log(page, pageSize)
             }}
-            dateFormatter='string'
+            dateFormatter="string"
             toolBarRender={() => [
-              <Space wrap key='button-space'>
-                <CustomModalForm type='add' />
+              <Space wrap key="button-space">
+                <CustomModalForm type="add" />
               </Space>
             ]}
           />

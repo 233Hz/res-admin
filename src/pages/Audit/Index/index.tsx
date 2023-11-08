@@ -22,10 +22,10 @@ const AuditIndex: React.FC = () => {
       tableAlertOptionRender={() => {
         return (
           <Space size={16}>
-            <Button type='link' key='editable' icon={<CheckOutlined />}>
+            <Button type="link" key="editable" icon={<CheckOutlined />}>
               批量通过
             </Button>
-            <Button type='link' key='down' icon={<CloseOutlined />} danger>
+            <Button type="link" key="down" icon={<CloseOutlined />} danger>
               批量拒绝
             </Button>
             ,
@@ -41,7 +41,7 @@ const AuditIndex: React.FC = () => {
           data: data.data.list
         }
       }}
-      rowKey='id'
+      rowKey="id"
       search={{
         labelWidth: 'auto'
       }}
@@ -49,7 +49,7 @@ const AuditIndex: React.FC = () => {
         pageSize: 10,
         onChange: (page, pageSize) => console.log(page, pageSize)
       }}
-      dateFormatter='string'
+      dateFormatter="string"
     />
   )
 }

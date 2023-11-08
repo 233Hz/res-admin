@@ -3,7 +3,11 @@ import { Button } from 'antd'
 import type { ProColumns } from '@ant-design/pro-components'
 import type { ColumnItem } from '@/types/column'
 import CustomModalForm from './CustomModalForm'
-import { AudioMutedOutlined, DeleteOutlined, SendOutlined } from '@ant-design/icons'
+import {
+  AudioMutedOutlined,
+  DeleteOutlined,
+  SendOutlined
+} from '@ant-design/icons'
 import { CustomPublishModalRef } from './CustomPublishModal'
 import { CustomAuthModalRef } from './CustomAuthModal'
 
@@ -38,21 +42,21 @@ const getColumns = (
       render: (text, record, _, action) => {
         console.log(text, record, _, action)
         return [
-          <CustomModalForm key='editable' type='update' form={record} />,
-          <Button type='link' key='deletable' icon={<DeleteOutlined />} danger>
+          <CustomModalForm key="editable" type="update" form={record} />,
+          <Button type="link" key="deletable" icon={<DeleteOutlined />} danger>
             删除
           </Button>,
           <Button
-            type='link'
-            key='publish'
+            type="link"
+            key="publish"
             icon={<SendOutlined />}
             onClick={() => publishModalRef.current?.showModal()}
           >
             发布权限
           </Button>,
           <Button
-            type='link'
-            key='audit'
+            type="link"
+            key="audit"
             icon={<AudioMutedOutlined />}
             onClick={() => authModalRef.current?.showModal()}
           >

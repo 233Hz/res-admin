@@ -9,10 +9,12 @@ const LineChart: React.FC = () => {
   }, [])
 
   const asyncFetch = () => {
-    fetch('https://gw.alipayobjects.com/os/bmw-prod/b21e7336-0b3e-486c-9070-612ede49284e.json')
-      .then(response => response.json())
-      .then(json => setData(json))
-      .catch(error => {
+    fetch(
+      'https://gw.alipayobjects.com/os/bmw-prod/b21e7336-0b3e-486c-9070-612ede49284e.json'
+    )
+      .then((response) => response.json())
+      .then((json) => setData(json))
+      .catch((error) => {
         console.log('fetch data failed', error)
       })
   }
@@ -25,7 +27,7 @@ const LineChart: React.FC = () => {
   }
 
   return (
-    <Card title='近7天各栏目访问情况'>
+    <Card title="近7天各栏目访问情况">
       <Area {...config} style={{ height: 300 }} />
     </Card>
   )

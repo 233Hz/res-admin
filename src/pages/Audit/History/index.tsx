@@ -24,10 +24,10 @@ const AuditHistory: React.FC = () => {
       tableAlertOptionRender={() => {
         return (
           <Space size={16}>
-            <Button type='link' key='editable' icon={<CheckOutlined />}>
+            <Button type="link" key="editable" icon={<CheckOutlined />}>
               批量通过
             </Button>
-            <Button type='link' key='down' icon={<CloseOutlined />} danger>
+            <Button type="link" key="down" icon={<CloseOutlined />} danger>
               批量拒绝
             </Button>
             ,
@@ -43,7 +43,7 @@ const AuditHistory: React.FC = () => {
           data: data.data.list
         }
       }}
-      rowKey='id'
+      rowKey="id"
       search={{
         labelWidth: 'auto'
       }}
@@ -51,10 +51,14 @@ const AuditHistory: React.FC = () => {
         pageSize: 10,
         onChange: (page, pageSize) => console.log(page, pageSize)
       }}
-      dateFormatter='string'
+      dateFormatter="string"
       toolBarRender={() => [
-        <Space wrap key='button-space'>
-          <Button type='primary' icon={<AuditOutlined />} onClick={() => navigate('/audit/index')}>
+        <Space wrap key="button-space">
+          <Button
+            type="primary"
+            icon={<AuditOutlined />}
+            onClick={() => navigate('/audit/index')}
+          >
             待我审核
           </Button>
         </Space>

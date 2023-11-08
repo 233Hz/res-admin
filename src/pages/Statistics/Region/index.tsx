@@ -9,10 +9,12 @@ const StatisticsRegion: React.FC = () => {
   }, [])
 
   const asyncFetch = () => {
-    fetch('https://gw.alipayobjects.com/os/antfincdn/g5hIthhKlr/quanguoshixianweizhi.json')
-      .then(response => response.json())
+    fetch(
+      'https://gw.alipayobjects.com/os/antfincdn/g5hIthhKlr/quanguoshixianweizhi.json'
+    )
+      .then((response) => response.json())
       .then(({ list }) => setData(list))
-      .catch(error => {
+      .catch((error) => {
         console.log('fetch data failed', error)
       })
   }

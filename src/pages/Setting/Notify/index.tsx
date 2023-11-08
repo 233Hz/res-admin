@@ -3,14 +3,14 @@ import { ProTable } from '@ant-design/pro-components'
 import { Space } from 'antd'
 import type { ActionType } from '@ant-design/pro-components'
 // import { queryCategoryLevel } from '@/api/category'
-import type { AllianceItem } from '@/types/alliance'
+import type { NotifyItem } from '@/types/notify'
 import columns, { defaultData } from './column'
 import CustomModalForm from './CustomModalForm'
 
 const SettingNotify: React.FC = () => {
   const actionRef = useRef<ActionType>()
   return (
-    <ProTable<AllianceItem>
+    <ProTable<NotifyItem>
       columns={columns}
       actionRef={actionRef}
       defaultData={defaultData}
@@ -35,7 +35,7 @@ const SettingNotify: React.FC = () => {
       //     data: data.data.list,
       //   }
       // }}
-      rowKey='id'
+      rowKey="id"
       search={{
         labelWidth: 'auto'
       }}
@@ -43,10 +43,10 @@ const SettingNotify: React.FC = () => {
         pageSize: 10,
         onChange: (page, pageSize) => console.log(page, pageSize)
       }}
-      dateFormatter='string'
+      dateFormatter="string"
       toolBarRender={() => [
-        <Space wrap key='button-space'>
-          <CustomModalForm type='add' />
+        <Space wrap key="button-space">
+          <CustomModalForm type="add" />
         </Space>
       ]}
     />

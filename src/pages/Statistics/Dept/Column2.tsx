@@ -69,7 +69,7 @@ const LineChart: React.FC = () => {
   }
 
   return (
-    <Card title='2023年各人员上传资源个数统计'>
+    <Card title="2023年各人员上传资源个数统计">
       <Column {...config} style={{ height: 300 }} />
     </Card>
   )

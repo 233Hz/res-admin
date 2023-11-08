@@ -9,10 +9,12 @@ const LineChart: React.FC = () => {
   }, [])
 
   const asyncFetch = () => {
-    fetch('https://gw.alipayobjects.com/os/bmw-prod/1d565782-dde4-4bb6-8946-ea6a38ccf184.json')
-      .then(response => response.json())
-      .then(json => setData(json))
-      .catch(error => {
+    fetch(
+      'https://gw.alipayobjects.com/os/bmw-prod/1d565782-dde4-4bb6-8946-ea6a38ccf184.json'
+    )
+      .then((response) => response.json())
+      .then((json) => setData(json))
+      .catch((error) => {
         console.log('fetch data failed', error)
       })
   }
@@ -30,7 +32,7 @@ const LineChart: React.FC = () => {
   }
 
   return (
-    <Card title='2023年各月份上传资源总个数对比'>
+    <Card title="2023年各月份上传资源总个数对比">
       <Line {...config} style={{ height: 300 }} />
     </Card>
   )

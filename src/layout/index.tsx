@@ -4,7 +4,12 @@ import {
   LogoutOutlined,
   QuestionCircleFilled
 } from '@ant-design/icons'
-import { PageContainer, ProCard, ProConfigProvider, ProLayout } from '@ant-design/pro-components'
+import {
+  PageContainer,
+  ProCard,
+  ProConfigProvider,
+  ProLayout
+} from '@ant-design/pro-components'
 import { ConfigProvider, Dropdown } from 'antd'
 import { useNavigate, useLocation, Outlet } from 'react-router-dom'
 import logo from '@/assets/logo.png'
@@ -17,7 +22,7 @@ const Layout = () => {
 
   return (
     <div
-      id='layout'
+      id="layout"
       style={{
         height: '100vh',
         overflow: 'auto'
@@ -35,13 +40,13 @@ const Layout = () => {
             location={{
               pathname: location.pathname
             }}
-            title='创新创业平台管理'
+            title="创新创业平台管理"
             logo={logo}
             fixSiderbar
-            layout='side'
-            navTheme='light'
-            contentWidth='Fluid'
-            colorPrimary='#1677FF'
+            layout="side"
+            navTheme="light"
+            contentWidth="Fluid"
+            colorPrimary="#1677FF"
             token={{
               header: {
                 colorBgMenuItemSelected: 'rgba(0,0,0,0.04)'
@@ -69,16 +74,16 @@ const Layout = () => {
                 )
               }
             }}
-            actionsRender={_props => {
+            actionsRender={(_props) => {
               if (_props.isMobile) return []
               if (typeof window === 'undefined') return []
               return [
-                <InfoCircleFilled key='InfoCircleFilled' />,
-                <QuestionCircleFilled key='QuestionCircleFilled' />,
-                <GithubFilled key='GithubFilled' />
+                <InfoCircleFilled key="InfoCircleFilled" />,
+                <QuestionCircleFilled key="QuestionCircleFilled" />,
+                <GithubFilled key="GithubFilled" />
               ]
             }}
-            menuFooterRender={_props => {
+            menuFooterRender={(_props) => {
               if (_props?.collapsed) return undefined
               return (
                 <div
@@ -91,11 +96,12 @@ const Layout = () => {
                 </div>
               )
             }}
-            onMenuHeaderClick={e => console.log(e)}
+            onMenuHeaderClick={(e) => console.log(e)}
             menuItemRender={(item, dom) => (
               <div
                 onClick={() =>
-                  (item.path && isExternalLink(item.path)) || navigate(item.path || '/index')
+                  (item.path && isExternalLink(item.path)) ||
+                  navigate(item.path || '/index')
                 }
               >
                 {dom}
@@ -103,7 +109,7 @@ const Layout = () => {
             )}
           >
             <PageContainer>
-              <ProCard className='overflow-auto'>
+              <ProCard className="overflow-auto">
                 <Outlet />
               </ProCard>
             </PageContainer>

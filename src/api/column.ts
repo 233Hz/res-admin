@@ -7,4 +7,6 @@ enum API {
 }
 
 export const pageColumn = (pid?: number) =>
-  request.get<ResponseResult<PageResult<ColumnItem>>>(API.PAGE, { params: { pid } })
+  request.get<ResponseResult<PageResult<ColumnItem>>>(API.PAGE, {
+    params: { pid }
+  })

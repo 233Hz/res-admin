@@ -19,35 +19,35 @@ export interface Props {}
 const ResourcesUpload: React.FC<Props> = () => {
   const formRef = useRef<ProFormInstance>()
   return (
-    <div className='flex'>
+    <div className="flex">
       <ProForm<ResourcesItem>
         formRef={formRef}
-        className='w-[1000px] mx-auto'
+        className="w-[1000px] mx-auto"
         grid
         rowProps={{ gutter: 16 }}
-        onFinish={async values => {
+        onFinish={async (values) => {
           console.log('values', values)
         }}
       >
         <ProForm.Group>
           <ProFormText
             colProps={{ sm: 24, md: 12 }}
-            name='name'
-            label='资源名称'
-            placeholder='请输入资源名称'
+            name="name"
+            label="资源名称"
+            placeholder="请输入资源名称"
             rules={[{ required: true }]}
           />
           <ProFormSelect
             colProps={{ sm: 24, md: 12 }}
-            name='categoryId'
-            label='资源分类'
-            placeholder='请选择资源分类'
+            name="categoryId"
+            label="资源分类"
+            placeholder="请选择资源分类"
             rules={[{ required: false }]}
           />
           <ProFormRadio.Group
             colProps={{ sm: 24, md: 12 }}
-            name='auth'
-            label='资源权限'
+            name="auth"
+            label="资源权限"
             options={[
               {
                 label: '共有',
@@ -63,8 +63,8 @@ const ResourcesUpload: React.FC<Props> = () => {
           />
           <ProFormRadio.Group
             colProps={{ sm: 24, md: 12 }}
-            name='download'
-            label='允许下载'
+            name="download"
+            label="允许下载"
             options={[
               {
                 label: '允许',
@@ -80,13 +80,13 @@ const ResourcesUpload: React.FC<Props> = () => {
           />
           <ProFormSelect
             colProps={{ sm: 24, md: 8 }}
-            name='columnL1Id'
-            label='一级栏目'
-            placeholder='请选择一级栏目'
+            name="columnL1Id"
+            label="一级栏目"
+            placeholder="请选择一级栏目"
             rules={[{ required: true }]}
             request={async () => {
               const { data } = await queryCategoryLevel()
-              return data.data.map(item => {
+              return data.data.map((item) => {
                 return {
                   label: item.name,
                   value: item.id
@@ -102,15 +102,17 @@ const ResourcesUpload: React.FC<Props> = () => {
               return (
                 <ProFormSelect
                   colProps={{ sm: 24, md: 8 }}
-                  name='columnL2Id'
-                  label='二级栏目'
+                  name="columnL2Id"
+                  label="二级栏目"
                   params={{ id: columnL1Id }}
                   initialValue={void 0}
-                  placeholder='请选择二级栏目'
+                  placeholder="请选择二级栏目"
                   rules={[{ required: true }]}
-                  request={async params => {
-                    const { data } = await queryCategoryLevel(params.id as number)
-                    return data.data.map(item => {
+                  request={async (params) => {
+                    const { data } = await queryCategoryLevel(
+                      params.id as number
+                    )
+                    return data.data.map((item) => {
                       return {
                         label: item.name,
                         value: item.id
@@ -129,15 +131,17 @@ const ResourcesUpload: React.FC<Props> = () => {
               return (
                 <ProFormSelect
                   colProps={{ sm: 24, md: 8 }}
-                  name='columnL3Id'
-                  label='三级栏目'
+                  name="columnL3Id"
+                  label="三级栏目"
                   params={{ id: columnL2Id }}
                   initialValue={void 0}
-                  placeholder='请选择三级栏目'
+                  placeholder="请选择三级栏目"
                   rules={[{ required: true }]}
-                  request={async params => {
-                    const { data } = await queryCategoryLevel(params.id as number)
-                    return data.data.map(item => {
+                  request={async (params) => {
+                    const { data } = await queryCategoryLevel(
+                      params.id as number
+                    )
+                    return data.data.map((item) => {
                       return {
                         label: item.name,
                         value: item.id
@@ -150,20 +154,20 @@ const ResourcesUpload: React.FC<Props> = () => {
           </ProFormDependency>
           <ProFormUploadButton
             colProps={{ sm: 24, md: 12 }}
-            name='cover'
-            label='封面上传'
+            name="cover"
+            label="封面上传"
             max={1}
           />
           <ProFormUploadDragger
             colProps={{ sm: 24, md: 12 }}
-            name='file'
-            label='文件上传'
+            name="file"
+            label="文件上传"
             rules={[{ required: false, message: '请上传文件' }]}
-            description=''
+            description=""
             max={1}
           />
         </ProForm.Group>
-        <ProFormField name='content' colProps={{ span: 24 }}>
+        <ProFormField name="content" colProps={{ span: 24 }}>
           <CustomEditor />
         </ProFormField>
       </ProForm>

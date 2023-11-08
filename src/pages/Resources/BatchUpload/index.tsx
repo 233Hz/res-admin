@@ -22,20 +22,20 @@ const ResourcesBatchUpload: React.FC = () => {
       <StepsForm.StepForm<{
         name: string
       }>
-        title='选择资源属性'
+        title="选择资源属性"
         onFinish={async () => {
           console.log(formRef.current?.getFieldsValue())
           return true
         }}
       >
         <ProFormSelect
-          name='columnL1Id'
-          label='一级栏目'
-          placeholder='请选择一级栏目'
+          name="columnL1Id"
+          label="一级栏目"
+          placeholder="请选择一级栏目"
           rules={[{ required: true }]}
           request={async () => {
             const { data } = await queryCategoryLevel()
-            return data.data.map(item => {
+            return data.data.map((item) => {
               return {
                 label: item.name,
                 value: item.id
@@ -51,15 +51,15 @@ const ResourcesBatchUpload: React.FC = () => {
           {({ columnL1Id }) => {
             return (
               <ProFormSelect
-                name='columnL2Id'
-                label='二级栏目'
+                name="columnL2Id"
+                label="二级栏目"
                 params={{ id: columnL1Id }}
                 initialValue={void 0}
-                placeholder='请选择二级栏目'
+                placeholder="请选择二级栏目"
                 rules={[{ required: true }]}
-                request={async params => {
+                request={async (params) => {
                   const { data } = await queryCategoryLevel(params.id as number)
-                  return data.data.map(item => {
+                  return data.data.map((item) => {
                     return {
                       label: item.name,
                       value: item.id
@@ -77,15 +77,15 @@ const ResourcesBatchUpload: React.FC = () => {
           {({ columnL2Id }) => {
             return (
               <ProFormSelect
-                name='columnL3Id'
-                label='三级栏目'
+                name="columnL3Id"
+                label="三级栏目"
                 params={{ id: columnL2Id }}
                 initialValue={void 0}
-                placeholder='请选择三级栏目'
+                placeholder="请选择三级栏目"
                 rules={[{ required: true }]}
-                request={async params => {
+                request={async (params) => {
                   const { data } = await queryCategoryLevel(params.id as number)
-                  return data.data.map(item => {
+                  return data.data.map((item) => {
                     return {
                       label: item.name,
                       value: item.id
@@ -97,15 +97,15 @@ const ResourcesBatchUpload: React.FC = () => {
           }}
         </ProFormDependency>
         <ProFormSelect
-          name='categoryId'
-          label='资源分类'
-          initialValue='aaa'
-          placeholder='请选择资源分类'
+          name="categoryId"
+          label="资源分类"
+          initialValue="aaa"
+          placeholder="请选择资源分类"
           rules={[{ required: true }]}
         />
         <ProFormSelect
-          name='auth'
-          label='资源权限'
+          name="auth"
+          label="资源权限"
           options={[
             {
               label: '共有',
@@ -120,8 +120,8 @@ const ResourcesBatchUpload: React.FC = () => {
           rules={[{ required: true }]}
         />
         <ProFormSelect
-          name='download'
-          label='允许下载'
+          name="download"
+          label="允许下载"
           options={[
             {
               label: '允许',
@@ -139,7 +139,7 @@ const ResourcesBatchUpload: React.FC = () => {
       <StepsForm.StepForm<{
         name: string
       }>
-        title='上传资源'
+        title="上传资源"
         onFinish={async () => {
           console.log(formRef.current?.getFieldsValue())
           return true
@@ -147,8 +147,8 @@ const ResourcesBatchUpload: React.FC = () => {
       >
         {' '}
         <ProFormUploadDragger
-          name='file'
-          label='文件上传'
+          name="file"
+          label="文件上传"
           rules={[{ required: true, message: '请上传文件' }]}
         />
         <Table
@@ -156,7 +156,7 @@ const ResourcesBatchUpload: React.FC = () => {
           dataSource={fileDefaultData}
           pagination={false}
           bordered
-          className='mb-[20px]'
+          className="mb-[20px]"
         />
       </StepsForm.StepForm>
     </StepsForm>

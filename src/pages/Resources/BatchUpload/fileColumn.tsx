@@ -29,7 +29,7 @@ const columns: ColumnsType<FileType> = [
     width: 160,
     align: 'center',
     render: (progress: number) => {
-      return <Progress percent={progress} size='small' />
+      return <Progress percent={progress} size="small" />
     }
   },
   {
@@ -43,8 +43,8 @@ const columns: ColumnsType<FileType> = [
     key: 'option',
     align: 'center',
     render: () => (
-      <Space size='middle'>
-        <Button type='link' icon={<FundViewOutlined />}>
+      <Space size="middle">
+        <Button type="link" icon={<FundViewOutlined />}>
           预览
         </Button>
       </Space>

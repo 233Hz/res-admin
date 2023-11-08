@@ -37,7 +37,7 @@ const ResourcesList: React.FC = () => {
           data: data.data.list
         }
       }}
-      rowKey='id'
+      rowKey="id"
       search={{
         labelWidth: 'auto'
       }}
@@ -45,11 +45,11 @@ const ResourcesList: React.FC = () => {
         pageSize: 10,
         onChange: (page, pageSize) => console.log(page, pageSize)
       }}
-      dateFormatter='string'
+      dateFormatter="string"
       toolBarRender={() => [
-        <Space wrap key='button-space'>
+        <Space wrap key="button-space">
           <Button
-            type='primary'
+            type="primary"
             icon={<PlusOutlined />}
             onClick={() => navigate('/resources/upload')}
           >

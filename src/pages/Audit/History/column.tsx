@@ -85,16 +85,16 @@ const columns: ProColumns<ResourcesItem>[] = [
     render: (text, record, _, action) => {
       console.log(text, record, _, action)
       return [
-        <Button type='link' key='auditRecord' icon={<FileSearchOutlined />}>
+        <Button type="link" key="auditRecord" icon={<FileSearchOutlined />}>
           审核记录
         </Button>,
-        <Button type='link' key='editable' icon={<CheckOutlined />}>
+        <Button type="link" key="editable" icon={<CheckOutlined />}>
           通过
         </Button>,
-        <Button type='link' key='down' icon={<CloseOutlined />} danger>
+        <Button type="link" key="down" icon={<CloseOutlined />} danger>
           拒绝
         </Button>,
-        <Button type='link' key='preview' icon={<FundViewOutlined />}>
+        <Button type="link" key="preview" icon={<FundViewOutlined />}>
           预览
         </Button>
       ]

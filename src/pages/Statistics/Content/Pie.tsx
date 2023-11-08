@@ -52,7 +52,7 @@ const LineChart: React.FC = () => {
   }
 
   return (
-    <Card title='截至目前各种分类下资源占比'>
+    <Card title="截至目前各种分类下资源占比">
       <Pie {...config} style={{ height: 720 }} />
     </Card>
   )

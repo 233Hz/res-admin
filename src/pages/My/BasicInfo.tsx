@@ -13,24 +13,28 @@ const MyBasicInfo: React.FC<any> = () => {
     <ProForm<any>
       style={{ width: 600 }}
       formRef={formRef}
-      layout='horizontal'
+      layout="horizontal"
       labelCol={{ span: 3 }}
       rowProps={{ gutter: 16 }}
-      onFinish={async values => {
+      onFinish={async (values) => {
         console.log('values', values)
       }}
     >
       <ProFormText
-        name='loginName'
-        label='登入账号'
-        placeholder='请输入登入账号'
-        initialValue='张三'
+        name="loginName"
+        label="登入账号"
+        placeholder="请输入登入账号"
+        initialValue="张三"
         readonly
       />
-      <ProFormText name='username' label='用户姓名' placeholder='请输入用户姓名' />
+      <ProFormText
+        name="username"
+        label="用户姓名"
+        placeholder="请输入用户姓名"
+      />
       <ProFormRadio.Group
-        name='gender'
-        label='性别'
+        name="gender"
+        label="性别"
         options={[
           {
             label: '男',
@@ -42,14 +46,18 @@ const MyBasicInfo: React.FC<any> = () => {
           }
         ]}
       />
-      <ProFormText name='phone' label='手机号码' placeholder='请输入手机号码' />
+      <ProFormText name="phone" label="手机号码" placeholder="请输入手机号码" />
       <ProFormText
-        name='email'
-        label='电子邮箱'
-        placeholder='请输入电子邮箱'
+        name="email"
+        label="电子邮箱"
+        placeholder="请输入电子邮箱"
         rules={[{ type: 'email' }]}
       />
-      <ProFormTextArea name='address' label='联系地址' placeholder='请输入联系地址' />
+      <ProFormTextArea
+        name="address"
+        label="联系地址"
+        placeholder="请输入联系地址"
+      />
     </ProForm>
   )
 }

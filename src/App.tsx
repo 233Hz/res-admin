@@ -5,7 +5,7 @@ import { useRoutes } from 'react-router-dom'
 
 const App: React.FC = () => {
   const element = useRoutes(routes)
-  return <div id='app'>{element}</div>
+  return <div id="app">{element}</div>
 }
 
 export default App

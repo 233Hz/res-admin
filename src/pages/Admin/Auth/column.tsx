@@ -5,7 +5,9 @@ import { SettingOutlined } from '@ant-design/icons'
 import { RefObject } from 'react'
 import { CustomTreeModalRef } from './CustomTreeModal'
 
-const getColumns = (modelRef: RefObject<CustomTreeModalRef>): ProColumns<RoleItem>[] => {
+const getColumns = (
+  modelRef: RefObject<CustomTreeModalRef>
+): ProColumns<RoleItem>[] => {
   console.log(modelRef)
 
   return [
@@ -37,8 +39,8 @@ const getColumns = (modelRef: RefObject<CustomTreeModalRef>): ProColumns<RoleIte
         console.log(text, record, _, action)
         return [
           <Button
-            type='link'
-            key='editable'
+            type="link"
+            key="editable"
             icon={<SettingOutlined />}
             onClick={() => modelRef.current?.showModal()}
           >

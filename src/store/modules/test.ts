@@ -7,7 +7,7 @@ const testApi = createApi({
     baseUrl: '/test'
   }),
   tagTypes: ['get', 'post'],
-  endpoints: build => ({
+  endpoints: (build) => ({
     testGet: build.query<any, void>({
       query: () => ({ url: '/get', method: 'get' }),
       keepUnusedDataFor: 5,

@@ -6,15 +6,15 @@ const request = axios.create({
 })
 
 //请求拦截器
-request.interceptors.request.use(config => {
+request.interceptors.request.use((config) => {
   return config
 })
 //响应拦截器
 request.interceptors.response.use(
-  response => {
+  (response) => {
     return response
   },
-  error => {
+  (error) => {
     //处理网络错误
     let msg = ''
     const status = error.response.status

@@ -7,41 +7,48 @@ export interface CustomAuthModalRef {
 
 export interface CustomAuthModalProps {}
 
-const CustomAuthModal = forwardRef<CustomAuthModalRef, CustomAuthModalProps>((_props, ref) => {
-  useImperativeHandle(ref, () => ({
-    showModal
-  }))
+const CustomAuthModal = forwardRef<CustomAuthModalRef, CustomAuthModalProps>(
+  (_props, ref) => {
+    useImperativeHandle(ref, () => ({
+      showModal
+    }))
 
-  const [form] = Form.useForm()
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const showModal = () => {
-    setIsModalOpen(true)
-  }
-  const handleOk = () => {
-    setIsModalOpen(false)
-  }
-  const handleCancel = () => {
-    setIsModalOpen(false)
-  }
+    const [form] = Form.useForm()
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const showModal = () => {
+      setIsModalOpen(true)
+    }
+    const handleOk = () => {
+      setIsModalOpen(false)
+    }
+    const handleCancel = () => {
+      setIsModalOpen(false)
+    }
 
-  return (
-    <Modal title='设置审核人' open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-      <Form
-        form={form}
-        onFinish={async values => {
-          console.log('values', values)
-        }}
+    return (
+      <Modal
+        title="设置审核人"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
       >
-        <Form.Item name='l1' label='一级审核人' rules={[{ required: true }]}>
-          <Select placeholder='请选择一级审核人' allowClear></Select>
-        </Form.Item>
-        <Form.Item name='l2' label='二级审核人' rules={[{ required: true }]}>
-          <Select placeholder='请选择二级审核人' allowClear></Select>
-        </Form.Item>
-      </Form>
-    </Modal>
-  )
-})
+        <Form
+          form={form}
+          onFinish={async (values) => {
+            console.log('values', values)
+          }}
+        >
+          <Form.Item name="l1" label="一级审核人" rules={[{ required: true }]}>
+            <Select placeholder="请选择一级审核人" allowClear></Select>
+          </Form.Item>
+          <Form.Item name="l2" label="二级审核人" rules={[{ required: true }]}>
+            <Select placeholder="请选择二级审核人" allowClear></Select>
+          </Form.Item>
+        </Form>
+      </Modal>
+    )
+  }
+)
 
 CustomAuthModal.displayName = 'CustomTransferModal'
 

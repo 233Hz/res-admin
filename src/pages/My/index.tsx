@@ -17,7 +17,7 @@ const tabItems: TabsProps['items'] = [
 ]
 
 const My: React.FC = () => {
-  return <Tabs defaultActiveKey='1' tabPosition='left' items={tabItems} />
+  return <Tabs defaultActiveKey="1" tabPosition="left" items={tabItems} />
 }
 
 export default My

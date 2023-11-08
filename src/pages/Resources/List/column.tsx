@@ -1,7 +1,12 @@
 import { Button } from 'antd'
 import type { ProColumns } from '@ant-design/pro-components'
 import type { ResourcesItem } from '@/types/resources'
-import { DeleteOutlined, EditOutlined, FundViewOutlined, RollbackOutlined } from '@ant-design/icons'
+import {
+  DeleteOutlined,
+  EditOutlined,
+  FundViewOutlined,
+  RollbackOutlined
+} from '@ant-design/icons'
 
 const columns: ProColumns<ResourcesItem>[] = [
   {
@@ -122,16 +127,16 @@ const columns: ProColumns<ResourcesItem>[] = [
     render: (text, record, _, action) => {
       console.log(text, record, _, action)
       return [
-        <Button type='link' key='editable' icon={<EditOutlined />}>
+        <Button type="link" key="editable" icon={<EditOutlined />}>
           编辑
         </Button>,
-        <Button type='link' key='down' icon={<RollbackOutlined />}>
+        <Button type="link" key="down" icon={<RollbackOutlined />}>
           下架
         </Button>,
-        <Button type='link' key='deletable' icon={<DeleteOutlined />} danger>
+        <Button type="link" key="deletable" icon={<DeleteOutlined />} danger>
           删除
         </Button>,
-        <Button type='link' key='preview' icon={<FundViewOutlined />}>
+        <Button type="link" key="preview" icon={<FundViewOutlined />}>
           预览
         </Button>
       ]

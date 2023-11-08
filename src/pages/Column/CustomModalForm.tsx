@@ -13,20 +13,20 @@ export interface Props {
 const triggerType = (type: CustomModalType) => {
   if (type === 'add') {
     return (
-      <Button type='primary' icon={<PlusOutlined />}>
+      <Button type="primary" icon={<PlusOutlined />}>
         添加
       </Button>
     )
   } else if (type === 'update') {
     return (
-      <Button type='link' icon={<EditOutlined />}>
+      <Button type="link" icon={<EditOutlined />}>
         编辑
       </Button>
     )
   }
 }
 
-const CustomModalForm: React.FC<Props> = props => (
+const CustomModalForm: React.FC<Props> = (props) => (
   <ModalForm
     trigger={triggerType(props.type)}
     onFinish={async (values: DeptItem) => {
@@ -35,8 +35,8 @@ const CustomModalForm: React.FC<Props> = props => (
     }}
     initialValues={{ ...props.form }}
   >
-    <ProFormText name='pColumn' label='上级栏目' readonly />
-    <ProFormText name='name' label='栏目名称' rules={[{ required: true }]} />
+    <ProFormText name="pColumn" label="上级栏目" readonly />
+    <ProFormText name="name" label="栏目名称" rules={[{ required: true }]} />
   </ModalForm>
 )
 

@@ -3,7 +3,7 @@ import { Editor, Toolbar } from '@wangeditor/editor-for-react'
 import { IDomEditor, IEditorConfig, IToolbarConfig } from '@wangeditor/editor'
 import '@wangeditor/editor/dist/css/style.css'
 
-const CustomEditor: React.FC<any> = props => {
+const CustomEditor: React.FC<any> = (props) => {
   // editor 实例
   const [editor, setEditor] = useState<IDomEditor | null>(null) // TS 语法
 
@@ -30,17 +30,17 @@ const CustomEditor: React.FC<any> = props => {
         <Toolbar
           editor={editor}
           defaultConfig={toolbarConfig}
-          mode='default'
+          mode="default"
           style={{ borderBottom: '1px solid #ccc' }}
         />
         <Editor
           defaultConfig={editorConfig}
           value={props.value}
           onCreated={setEditor}
-          onChange={editor => {
+          onChange={(editor) => {
             props.onChange(editor.getHtml())
           }}
-          mode='default'
+          mode="default"
           style={{ height: '500px', overflowY: 'hidden' }}
         />
       </div>
