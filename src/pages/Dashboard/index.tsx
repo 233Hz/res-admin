@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Row } from 'antd'
 import FastPanel from './FastPanel'
 import DataPanel from './DataPanel'
-// import TrendChart from './TrendChart'
+import AreaChart from './AreaChart'
 
 const Dashboard: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
         <DataPanel />
       </Col>
       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-        {/* <TrendChart /> */}
+        <AreaChart />
       </Col>
     </Row>
   )

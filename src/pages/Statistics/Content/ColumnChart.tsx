@@ -2,27 +2,39 @@ import { Card } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { Column, ColumnConfig } from '@ant-design/charts'
 
-const LineChart: React.FC = () => {
+const categoryData = [
+  '六校联盟创新创业大赛',
+  '创新创业在线学习资源',
+  '创新创业社团',
+  '创新创业典型案例',
+  '产教融合企业'
+]
+
+const ColumnChart: React.FC = () => {
   const [data, setData] = useState<any[]>([])
   useEffect(() => {
     asyncFetch()
   }, [])
 
   const asyncFetch = () => {
-    fetch(
-      'https://gw.alipayobjects.com/os/antfincdn/8elHX%26irfq/stack-column-data.json'
-    )
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => {
-        console.log('fetch data failed', error)
+    const data: any[] = []
+    Array.from({ length: 12 }).map((_, index) => {
+      categoryData.forEach((item) => {
+        data.push({
+          month: `${index + 1}月`,
+          value: Math.floor(Math.random() * 1000) + 200,
+          type: item
+        })
       })
+    })
+    setData(data)
   }
 
   const config: ColumnConfig = {
     data,
+    color: ['#d87a80', '#ffcb8c', '#5fb878', '#00a595', '#1e9fff'],
     isStack: true,
-    xField: 'year',
+    xField: 'month',
     yField: 'value',
     seriesField: 'type',
     label: {
@@ -46,10 +58,10 @@ const LineChart: React.FC = () => {
   }
 
   return (
-    <Card title="2023年各人员上传资源个数统计">
+    <Card title="2023年各栏目上传资源个数对比">
       <Column {...config} style={{ height: 300 }} />
     </Card>
   )
 }
 
-export default LineChart
+export default ColumnChart

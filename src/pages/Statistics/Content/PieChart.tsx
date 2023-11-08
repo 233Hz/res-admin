@@ -2,32 +2,22 @@ import { Card } from 'antd'
 import React, { useState } from 'react'
 import { Pie, PieConfig } from '@ant-design/charts'
 
-const LineChart: React.FC = () => {
+const categoryData = [
+  '六校联盟创新创业大赛',
+  '创新创业在线学习资源',
+  '创新创业社团',
+  '创新创业典型案例',
+  '产教融合企业'
+]
+
+const PieChart: React.FC = () => {
   const [data] = useState<any[]>([
-    {
-      type: '分类一',
-      value: 27
-    },
-    {
-      type: '分类二',
-      value: 25
-    },
-    {
-      type: '分类三',
-      value: 18
-    },
-    {
-      type: '分类四',
-      value: 15
-    },
-    {
-      type: '分类五',
-      value: 10
-    },
-    {
-      type: '其他',
-      value: 5
-    }
+    ...categoryData.map((item) => {
+      return {
+        type: item,
+        value: Math.floor(Math.random() * 1000)
+      }
+    })
   ])
 
   const config: PieConfig = {
@@ -52,10 +42,10 @@ const LineChart: React.FC = () => {
   }
 
   return (
-    <Card title="用户访问浏览器分布">
-      <Pie {...config} style={{ height: 300 }} />
+    <Card title="截至目前各种分类下资源占比">
+      <Pie {...config} style={{ height: 720 }} />
     </Card>
   )
 }
 
-export default LineChart
+export default PieChart

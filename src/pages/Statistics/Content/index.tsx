@@ -1,8 +1,8 @@
 import { Col, Row } from 'antd'
 import React from 'react'
-import Line from './Line'
-import Column from './Column'
-import Pie from './Pie'
+import LineChart from './LineChart'
+import ColumnChart from './ColumnChart'
+import PieChart from './PieChart'
 
 const StatisticsContent: React.FC = () => {
   return (
@@ -10,15 +10,15 @@ const StatisticsContent: React.FC = () => {
       <Col xs={24} sm={24} md={24} lg={24} xl={12}>
         <Row gutter={[16, 16]}>
           <Col span={24}>
-            <Line />
+            <LineChart />
           </Col>
           <Col span={24}>
-            <Column />
+            <ColumnChart />
           </Col>
         </Row>
       </Col>
       <Col xs={24} sm={24} md={24} lg={24} xl={12}>
-        <Pie />
+        <PieChart />
       </Col>
     </Row>
   )
