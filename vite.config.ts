@@ -17,6 +17,16 @@ export default defineConfig(({ command }) => {
         mockPath: 'mock',
         localEnabled: command === 'serve'
       })
-    ]
+    ],
+    server: {
+      port: 9999,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:9000/xc_api',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
+        }
+      }
+    }
   }
 })

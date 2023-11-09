@@ -1,27 +1,26 @@
 import { useRef } from 'react'
 import { ProTable } from '@ant-design/pro-components'
-import { Button, Space } from 'antd'
+import { Space } from 'antd'
 import type { ActionType } from '@ant-design/pro-components'
 import { pageRole } from '@/api/role'
 import type { RoleItem } from '@/types/role'
 import getColumns, { defaultData } from './column'
 import CustomTreeModal, { CustomTreeModalRef } from './CustomTreeModal'
-import { useTestGetQuery, useTestPostMutation } from '@/store/modules/test'
 
 const Auth: React.FC = () => {
   const actionRef = useRef<ActionType>()
   const transferModalRef = useRef<CustomTreeModalRef>(null)
 
-  const res1 = useTestGetQuery()
-  console.log('RES============>', res1)
+  // const res1 = useTestGetQuery()
+  // console.log('RES============>', res1)
 
-  const [testPost, res] = useTestPostMutation()
-  console.log(res)
+  // const [testPost, res] = useTestPostMutation()
+  // console.log(res)
 
   return (
     <>
-      <Button onClick={() => res1.refetch()}>TEST</Button>
-      <Button onClick={() => testPost()}>TEST2</Button>
+      {/* <Button onClick={() => res1.refetch()}>TEST</Button>
+      <Button onClick={() => testPost()}>TEST2</Button> */}
       <ProTable<RoleItem>
         columns={getColumns(transferModalRef)}
         actionRef={actionRef}
