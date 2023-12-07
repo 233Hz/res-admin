@@ -32,7 +32,6 @@ const ResourcesBatchUpload: React.FC = () => {
           name="columnL1Id"
           label="一级栏目"
           placeholder="请选择一级栏目"
-          rules={[{ required: true }]}
           request={async () => {
             const { data } = await queryCategoryLevel()
             return data.data.map((item) => {
@@ -56,7 +55,6 @@ const ResourcesBatchUpload: React.FC = () => {
                 params={{ id: columnL1Id }}
                 initialValue={void 0}
                 placeholder="请选择二级栏目"
-                rules={[{ required: true }]}
                 request={async (params) => {
                   const { data } = await queryCategoryLevel(params.id as number)
                   return data.data.map((item) => {
@@ -81,8 +79,6 @@ const ResourcesBatchUpload: React.FC = () => {
                 label="三级栏目"
                 params={{ id: columnL2Id }}
                 initialValue={void 0}
-                placeholder="请选择三级栏目"
-                rules={[{ required: true }]}
                 request={async (params) => {
                   const { data } = await queryCategoryLevel(params.id as number)
                   return data.data.map((item) => {
